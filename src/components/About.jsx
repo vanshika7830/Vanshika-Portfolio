@@ -1,20 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  SiPython, SiTensorflow, SiPandas, SiScikitlearn,
-  SiMysql, SiGit, SiJupyter, SiNumpy, SiKeras, SiPowerbi,
-  SiDocker,
+  SiPython, SiTensorflow, SiPandas,
+  SiMysql, SiGit, SiJupyter, SiNumpy,
+  SiKeras, SiDocker, 
 } from 'react-icons/si';
 import { TbChartBar, TbBolt } from 'react-icons/tb';
+import { FaBrain } from 'react-icons/fa'; 
+import { TbFileSpreadsheet } from 'react-icons/tb';
 import './About.css';
 
 const skills = [
   { name: 'Python', icon: <SiPython /> },
   { name: 'Pandas', icon: <SiPandas /> },
-  { name: 'Scikit-Learn', icon: <SiScikitlearn /> },
+  { name: 'Scikit-Learn', icon: <FaBrain /> }, 
   { name: 'NumPy', icon: <SiNumpy /> },
   { name: 'SQL', icon: <SiMysql /> },
-  { name: 'PowerBI', icon: <SiPowerbi/>},
+  { name: 'Power BI', icon: <TbChartBar /> },
+  { name: 'Excel', icon: <TbFileSpreadsheet /> },
   { name: 'Docker', icon: <SiDocker /> },
   { name: 'Git', icon: <SiGit /> },
   { name: 'Jupyter', icon: <SiJupyter /> },
@@ -54,10 +57,10 @@ function About() {
           transition={{ duration: 0.7, delay: 0.15 }}
         >
           <p>
-            I'm <strong>Vanshika Gupta</strong>, a passionate Data Science Engineer who thrives on transforming raw data into actionable insights. With a strong foundation in machine learning, statistical analysis, and data visualization, I build end-to-end solutions that drive real-world impact.
+            I'm <strong>Vanshika Gupta</strong>, a passionate Data Science Engineer who thrives on transforming raw data into actionable insights.
           </p>
           <p>
-            Whether it's designing predictive models, crafting compelling dashboards, or exploring cutting-edge deep learning architectures — I love solving complex problems with elegant, data-driven approaches.
+            Whether it's designing predictive models, crafting dashboards, or exploring deep learning — I love solving complex problems with data-driven approaches.
           </p>
         </motion.div>
 
