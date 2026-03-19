@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   SiPython, SiTensorflow, SiPandas, SiScikitlearn,
-  SiMysql, SiGit, SiJupyter, SiNumpy, SiKeras,
+  SiMysql, SiGit, SiJupyter, SiNumpy, SiKeras, SiPowerbi,
   SiDocker,
 } from 'react-icons/si';
 import { TbChartBar, TbBolt } from 'react-icons/tb';
@@ -14,7 +14,7 @@ const skills = [
   { name: 'Scikit-Learn', icon: <SiScikitlearn /> },
   { name: 'NumPy', icon: <SiNumpy /> },
   { name: 'SQL', icon: <SiMysql /> },
-  { name: 'Power BI', icon: <TbChartBar /> },
+  { name: 'PowerBI', icon: <SiPowerbi/>},
   { name: 'Docker', icon: <SiDocker /> },
   { name: 'Git', icon: <SiGit /> },
   { name: 'Jupyter', icon: <SiJupyter /> },
