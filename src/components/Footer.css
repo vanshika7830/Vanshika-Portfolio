@@ -1,0 +1,42 @@
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--clr-glass-border);
+  padding: var(--space-lg) 0;
+  margin-top: var(--space-xl);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  text-align: center;
+}
+
+.footer__text {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.footer__text strong {
+  color: var(--clr-heading);
+}
+
+.footer__heart {
+  color: var(--clr-gradient-mid);
+  animation: heartbeat 1.4s ease infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.footer__copy {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  opacity: 0.6;
+}

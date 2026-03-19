@@ -1,0 +1,103 @@
+/* ---------- Navbar ---------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background var(--transition-base), box-shadow var(--transition-base);
+  height: var(--nav-height);
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar--scrolled {
+  background: rgba(11, 15, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid var(--clr-glass-border);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--nav-height);
+}
+
+.navbar__logo {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.navbar__links {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.navbar__link {
+  background: none;
+  color: var(--clr-text-muted);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.navbar__link:hover {
+  color: var(--clr-heading);
+  background: var(--clr-surface);
+}
+
+.navbar__link--active {
+  color: var(--clr-heading);
+  background: rgba(124, 58, 237, 0.15);
+}
+
+.navbar__toggle {
+  display: none;
+  background: none;
+  color: var(--clr-heading);
+}
+
+/* Mobile */
+.navbar__mobile {
+  overflow: hidden;
+  background: rgba(11, 15, 26, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm) var(--space-lg);
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--clr-glass-border);
+}
+
+.navbar__mobile-link {
+  background: none;
+  color: var(--clr-text);
+  font-size: var(--fs-md);
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.navbar__mobile-link:hover {
+  background: var(--clr-surface);
+}
+
+@media (max-width: 768px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+}

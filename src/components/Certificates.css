@@ -1,0 +1,98 @@
+/* ---------- Certificates Section ---------- */
+.certificates__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.cert-card {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: box-shadow var(--transition-base);
+}
+
+.cert-card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.cert-card__accent {
+  height: 4px;
+  width: 100%;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.cert-card__content {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cert-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+.cert-card__title {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.cert-card__issuer {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+}
+
+.cert-card__glow {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 0;
+}
+
+.cert-card:hover .cert-card__glow {
+  opacity: 0.2;
+}
+
+.cert-card__view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.2rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--cert-color, var(--clr-accent-light));
+  border: 1px solid color-mix(in srgb, var(--cert-color, var(--clr-accent)) 30%, transparent);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
+}
+
+.cert-card__view-btn:hover {
+  background: color-mix(in srgb, var(--cert-color, var(--clr-accent)) 25%, transparent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--cert-color, var(--clr-accent)) 40%, transparent);
+}
+
+@media (max-width: 768px) {
+  .certificates__grid {
+    grid-template-columns: 1fr;
+  }
+}
