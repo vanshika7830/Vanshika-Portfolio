@@ -10,14 +10,11 @@ import './About.css';
 
 const skills = [
   { name: 'Python', icon: <SiPython /> },
-  { name: 'TensorFlow', icon: <SiTensorflow /> },
   { name: 'Pandas', icon: <SiPandas /> },
   { name: 'Scikit-Learn', icon: <SiScikitlearn /> },
   { name: 'NumPy', icon: <SiNumpy /> },
-  { name: 'Keras', icon: <SiKeras /> },
   { name: 'SQL', icon: <SiMysql /> },
-  { name: 'Tableau', icon: <TbChartBar /> },
-  { name: 'Spark', icon: <TbBolt /> },
+  { name: 'Power BI', icon: <TbChartBar /> },
   { name: 'Docker', icon: <SiDocker /> },
   { name: 'Git', icon: <SiGit /> },
   { name: 'Jupyter', icon: <SiJupyter /> },
