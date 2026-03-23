@@ -10,8 +10,8 @@ const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const socialLinks = [
-  { icon: <FaLinkedinIn />, href: '#', label: 'LinkedIn' },
-  { icon: <FaGithub />, href: '#', label: 'GitHub' },
+  { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/in/vanshika-gupta-a56a5b293/', label: 'LinkedIn' },
+  { icon: <FaGithub />, href: 'https://github.com/vanshika7830', label: 'GitHub' },
 ];
 
 function Contact() {
