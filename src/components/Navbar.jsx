@@ -17,6 +17,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [hoveredLink, setHoveredLink] = useState(null);
   const profileRef = useRef(null);
 
   useEffect(() => {
@@ -61,9 +62,9 @@ function Navbar() {
   return (
     <motion.nav
       className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      initial={{ y: -100, x: "-50%" }}
+      animate={{ y: 0, x: "-50%" }}
+      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="navbar__inner container">
         <div className="navbar__brand">
@@ -118,12 +119,31 @@ function Navbar() {
         {/* Desktop Links */}
         <ul className="navbar__links">
           {navLinks.map((link) => (
-            <li key={link.id}>
+            <li 
+              key={link.id}
+              className="navbar__link-item"
+              onMouseEnter={() => setHoveredLink(link.id)}
+              onMouseLeave={() => setHoveredLink(null)}
+            >
               <button
                 className={`navbar__link ${activeSection === link.id ? 'navbar__link--active' : ''}`}
                 onClick={() => scrollTo(link.id)}
               >
-                {link.label}
+                {activeSection === link.id && (
+                  <motion.div
+                    layoutId="nav-active"
+                    className="navbar__link-active-bg"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+                {hoveredLink === link.id && activeSection !== link.id && (
+                  <motion.div
+                    layoutId="nav-hover"
+                    className="navbar__link-hover-bg"
+                    transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                  />
+                )}
+                <span className="navbar__link-text">{link.label}</span>
               </button>
             </li>
           ))}
