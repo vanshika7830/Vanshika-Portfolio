@@ -44,6 +44,16 @@ function Hero() {
       <div className="hero__split container">
         {/* Left — Text content */}
         <div className="hero__content">
+          <motion.div
+            className="hero__availability-capsule"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+          >
+            <span className="availability-dot"></span>
+            Open for opportunities
+          </motion.div>
+
           <motion.p
             className="hero__greeting"
             initial={{ opacity: 0, y: 20 }}
