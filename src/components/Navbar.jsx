@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import profilePic from '../assets/professionalImage.jpeg';
 import './Navbar.css';
 
 const navLinks = [
@@ -14,7 +15,9 @@ const navLinks = [
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const profileRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,8 +36,20 @@ function Navbar() {
         }
       }
     };
+
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setProfileOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const scrollTo = (id) => {
@@ -51,9 +66,54 @@ function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="navbar__inner container">
-        <a href="#home" className="navbar__logo" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>
-          <span className="gradient-text">VG</span>
-        </a>
+        <div className="navbar__brand">
+          <div className="navbar__profile-container" ref={profileRef}>
+            <button 
+              className="navbar__profile-btn"
+              onClick={() => setProfileOpen(!profileOpen)}
+              aria-label="Toggle profile information"
+            >
+              <img src={profilePic} alt="Vanshika Profile" className="navbar__profile-img" />
+            </button>
+            <AnimatePresence>
+              {profileOpen && (
+                <motion.div 
+                  className="profile-popover"
+                  initial={{ opacity: 0, scale: 0.95, y: 10 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                  transition={{ duration: 0.2, type: 'spring', stiffness: 300, damping: 25 }}
+                >
+                  <div className="profile-popover__header">
+                    <h4>Vanshika Gupta</h4>
+                    <p className="profile-popover__role">Data Science Engineer</p>
+                  </div>
+                  <div className="profile-popover__body">
+                    <div className="profile-info-item">
+                      <span className="profile-info-icon" aria-label="Location">📍</span>
+                      <p>Uttar Pradesh, India</p>
+                    </div>
+                    <div className="profile-info-item">
+                      <span className="profile-info-icon" aria-label="Education">🎓</span>
+                      <p>B.Tech, Lovely Professional University (2027)</p>
+                    </div>
+                    <div className="profile-info-item skills-item">
+                      <span className="profile-info-icon" aria-label="Skills">💻</span>
+                      <div className="profile-skills-list">
+                        <span>Python</span><span>Pandas</span><span>Scikit-Learn</span><span>NumPy</span>
+                        <span>SQL</span><span>Power BI</span><span>Excel</span><span>Docker</span>
+                        <span>Git</span><span>Jupyter</span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+          <a href="#home" className="navbar__logo" onClick={(e) => { e.preventDefault(); scrollTo('home'); }}>
+            <span className="gradient-text">Vanshika</span>
+          </a>
+        </div>
 
         {/* Desktop Links */}
         <ul className="navbar__links">

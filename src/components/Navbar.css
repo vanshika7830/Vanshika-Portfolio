@@ -26,6 +26,130 @@
   height: var(--nav-height);
 }
 
+.navbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar__profile-container {
+  position: relative;
+}
+
+.navbar__profile-btn {
+  background: none;
+  border: 2px solid var(--clr-glass-border);
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar__profile-btn:hover {
+  border-color: var(--clr-primary);
+  transform: scale(1.05);
+}
+
+.navbar__profile-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-popover {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  width: 320px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--clr-glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  cursor: default;
+}
+
+.profile-popover::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 20px;
+  width: 16px;
+  height: 16px;
+  background: rgba(15, 23, 42, 0.95);
+  border-top: 1px solid var(--clr-glass-border);
+  border-left: 1px solid var(--clr-glass-border);
+  transform: rotate(45deg);
+}
+
+.profile-popover__header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-popover__header h4 {
+  font-family: var(--ff-heading);
+  font-size: var(--fs-lg);
+  color: var(--clr-heading);
+  margin-bottom: 0.25rem;
+}
+
+.profile-popover__role {
+  color: var(--clr-primary);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+}
+
+.profile-popover__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--clr-text);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.profile-info-icon {
+  font-size: 1.25rem;
+  margin-top: 2px;
+}
+
+.skills-item {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-skills-list span {
+  background: rgba(124, 58, 237, 0.15);
+  color: #c4b5fd;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  font-weight: 500;
+}
+
 .navbar__logo {
   font-family: var(--ff-heading);
   font-size: var(--fs-xl);
