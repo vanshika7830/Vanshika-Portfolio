@@ -32,9 +32,9 @@
 
 .tab-btn {
   padding: 0.6rem 1.6rem;
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border: 1.5px solid var(--clr-tab-border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--clr-tab-bg);
   color: var(--clr-text-muted, #aaa);
   font-size: var(--fs-sm, 0.875rem);
   font-weight: 500;
@@ -45,8 +45,8 @@
 }
 
 .tab-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.22);
+  background: var(--clr-tab-hover-bg);
+  border-color: var(--clr-tab-hover-border);
   color: var(--clr-text, #fff);
   transform: translateY(-2px);
 }

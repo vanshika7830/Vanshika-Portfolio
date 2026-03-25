@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import profilePic from '../assets/professionalImage.jpeg';
+import ThemeToggle from './ThemeToggle';
 import './Navbar.css';
 
 const navLinks = [
@@ -150,10 +151,13 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* Mobile toggle */}
-        <button className="navbar__toggle" onClick={() => setMenuOpen(v => !v)} aria-label="Toggle menu">
-          {menuOpen ? <HiX size={26} /> : <HiMenuAlt3 size={26} />}
-        </button>
+        <div className="navbar__right">
+          <ThemeToggle />
+          {/* Mobile toggle */}
+          <button className="navbar__toggle" onClick={() => setMenuOpen(v => !v)} aria-label="Toggle menu">
+            {menuOpen ? <HiX size={26} /> : <HiMenuAlt3 size={26} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}

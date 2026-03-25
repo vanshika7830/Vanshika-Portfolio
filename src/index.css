@@ -21,6 +21,21 @@
   --clr-gradient-mid: #ec4899;
   --clr-gradient-end: #f59e0b;
 
+  /* Theme-aware component tokens */
+  --clr-nav-bg: rgba(11, 15, 26, 0.4);
+  --clr-nav-bg-scrolled: rgba(11, 15, 26, 0.85);
+  --clr-nav-mobile-bg: rgba(11, 15, 26, 0.95);
+  --clr-popover-bg: rgba(15, 23, 42, 0.95);
+  --clr-overlay-line: rgba(255, 255, 255, 0.02);
+  --clr-section-border: rgba(255, 255, 255, 0.04);
+  --clr-tab-border: rgba(255, 255, 255, 0.12);
+  --clr-tab-bg: rgba(255, 255, 255, 0.04);
+  --clr-tab-hover-bg: rgba(255, 255, 255, 0.08);
+  --clr-tab-hover-border: rgba(255, 255, 255, 0.22);
+  --clr-link-hover-bg: rgba(255, 255, 255, 0.08);
+  --clr-star-base: rgba(200, 190, 255, 0.85);
+  --clr-star-shadow: rgba(167, 139, 250, 0.4);
+
   /* Typography */
   --ff-heading: 'Space Grotesk', sans-serif;
   --ff-body: 'Inter', sans-serif;
@@ -68,6 +83,39 @@
   --nav-height: 72px;
 }
 
+/* ---------- Light Theme ---------- */
+[data-theme="light"] {
+  --clr-bg: #f8f9fc;
+  --clr-bg-alt: #eef0f5;
+  --clr-surface: rgba(0, 0, 0, 0.03);
+  --clr-glass: rgba(0, 0, 0, 0.04);
+  --clr-glass-border: rgba(0, 0, 0, 0.08);
+  --clr-text: #1e293b;
+  --clr-text-muted: #64748b;
+  --clr-heading: #0f172a;
+  --clr-accent: #7c3aed;
+  --clr-accent-light: #6d28d9;
+  --clr-accent-glow: rgba(124, 58, 237, 0.2);
+
+  --clr-nav-bg: rgba(248, 249, 252, 0.6);
+  --clr-nav-bg-scrolled: rgba(248, 249, 252, 0.9);
+  --clr-nav-mobile-bg: rgba(248, 249, 252, 0.97);
+  --clr-popover-bg: rgba(255, 255, 255, 0.97);
+  --clr-overlay-line: rgba(0, 0, 0, 0.04);
+  --clr-section-border: rgba(0, 0, 0, 0.06);
+  --clr-tab-border: rgba(0, 0, 0, 0.1);
+  --clr-tab-bg: rgba(0, 0, 0, 0.03);
+  --clr-tab-hover-bg: rgba(0, 0, 0, 0.06);
+  --clr-tab-hover-border: rgba(0, 0, 0, 0.15);
+  --clr-link-hover-bg: rgba(0, 0, 0, 0.05);
+  --clr-star-base: rgba(124, 58, 237, 0.25);
+  --clr-star-shadow: rgba(124, 58, 237, 0.15);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
 /* ---------- Reset ---------- */
 *,
 *::before,
@@ -91,6 +139,7 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   cursor: none;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Hide native cursor on interactive elements too */
@@ -199,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Glowing divider between sections ── */
 .section + .section {
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid var(--clr-section-border);
 }
 
 /* ── Alternate section tinting ── */

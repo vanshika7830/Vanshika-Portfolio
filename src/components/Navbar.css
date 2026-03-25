@@ -8,16 +8,16 @@
   border-radius: 9999px;
   z-index: 1000;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(11, 15, 26, 0.4);
+  background: var(--clr-nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--clr-glass-border);
 }
 
 .navbar--scrolled {
   top: 1rem;
   width: 85%;
-  background: rgba(11, 15, 26, 0.85);
+  background: var(--clr-nav-bg-scrolled);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -72,7 +72,7 @@
   top: calc(100% + 15px);
   left: 0;
   width: 320px;
-  background: rgba(15, 23, 42, 0.95);
+  background: var(--clr-popover-bg);
   border: 1px solid var(--clr-glass-border);
   border-radius: var(--radius-lg);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
@@ -90,14 +90,14 @@
   left: 20px;
   width: 16px;
   height: 16px;
-  background: rgba(15, 23, 42, 0.95);
+  background: var(--clr-popover-bg);
   border-top: 1px solid var(--clr-glass-border);
   border-left: 1px solid var(--clr-glass-border);
   transform: rotate(45deg);
 }
 
 .profile-popover__header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--clr-glass-border);
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
@@ -211,9 +211,15 @@
 .navbar__link-hover-bg {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--clr-link-hover-bg);
   border-radius: var(--radius-full);
   z-index: 0;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .navbar__toggle {
@@ -225,7 +231,7 @@
 /* Mobile */
 .navbar__mobile {
   overflow: hidden;
-  background: rgba(11, 15, 26, 0.95);
+  background: var(--clr-nav-mobile-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   display: flex;
