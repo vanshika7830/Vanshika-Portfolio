@@ -5,6 +5,13 @@ import './Projects.css';
 
 const projects = [
   {
+    title: 'QuickStay',
+    description: 'A full-stack hotel booking platform built with the MERN stack. Browse hotels, check availability, book rooms, and manage reservations — all with a sleek, responsive interface and seamless user experience.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB'],
+    github: 'https://github.com/vanshika7830/QuickStay.git',
+    live: 'https://quick-stay-sandy.vercel.app/',
+  },
+  {
     title: 'Speech Emotion detection',
     description: 'NLP-powered sentiment classifier for product reviews using transformer models. Includes real-time inference API and interactive visualization.',
     tech: ['Python', 'Scikit-Learn', 'XGBoost', 'CNN'],

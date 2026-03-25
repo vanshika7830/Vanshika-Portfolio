@@ -8,6 +8,7 @@ const navLinks = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'projects', label: 'Projects' },
+  { id: 'experience', label: 'Experience' },
   { id: 'certificates', label: 'Certificates' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -103,7 +104,7 @@ function Navbar() {
                       <div className="profile-skills-list">
                         <span>Python</span><span>Pandas</span><span>Scikit-Learn</span><span>NumPy</span>
                         <span>SQL</span><span>Power BI</span><span>Excel</span><span>Docker</span>
-                        <span>Git</span><span>Jupyter</span>
+                        <span>Git</span><span>Jupyter</span><span>Excel</span><span>MERN</span>
                       </div>
                     </div>
                   </div>
