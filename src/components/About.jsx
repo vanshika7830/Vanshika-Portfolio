@@ -78,7 +78,7 @@ function About() {
             I'm <strong>Vanshika Gupta</strong>, a passionate Data Science Engineer who thrives on transforming raw data into actionable insights.
           </p>
           <p>
-            Whether it's designing predictive models, crafting dashboards, or exploring deep learning — I love solving complex problems with data-driven approaches.
+            Whether it's designing predictive models, crafting dashboards, or exploring deep learning. I love solving complex problems with data-driven approaches.
           </p>
         </motion.div>
 
