@@ -141,6 +141,74 @@ h1, h2, h3, h4, h5, h6 {
 .section {
   padding: var(--space-section) 0;
   position: relative;
+  overflow: hidden;
+}
+
+/* ── Ambient gradient orbs on every section (except hero) ── */
+.section:not(.hero)::before,
+.section:not(.hero)::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section:not(.hero)::before {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.12), transparent 70%);
+  top: -10%;
+  left: -8%;
+  animation: ambientDrift 16s ease-in-out infinite;
+}
+
+.section:not(.hero)::after {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.08), transparent 70%);
+  bottom: -10%;
+  right: -8%;
+  animation: ambientDrift 16s ease-in-out infinite reverse;
+}
+
+/* Alternate orb positions for visual variety */
+.section:not(.hero):nth-child(even)::before {
+  left: auto;
+  right: -8%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.10), transparent 70%);
+}
+
+.section:not(.hero):nth-child(even)::after {
+  right: auto;
+  left: -8%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.10), transparent 70%);
+}
+
+@keyframes ambientDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.08); }
+}
+
+/* ── Subtle grid texture on non-hero sections ── */
+.section:not(.hero) > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Glowing divider between sections ── */
+.section + .section {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* ── Alternate section tinting ── */
+.section:not(.hero):nth-child(odd) {
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.02) 0%, transparent 50%, rgba(236, 72, 153, 0.02) 100%);
+}
+
+.section:not(.hero):nth-child(even) {
+  background: linear-gradient(180deg, rgba(236, 72, 153, 0.02) 0%, transparent 50%, rgba(245, 158, 11, 0.02) 100%);
 }
 
 .section-title {
