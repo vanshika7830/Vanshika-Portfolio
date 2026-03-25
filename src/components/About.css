@@ -22,6 +22,49 @@
   color: var(--clr-text);
 }
 
+/* ── Tab Toggle Buttons ── */
+.about__tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: var(--space-xl, 2rem);
+}
+
+.tab-btn {
+  padding: 0.6rem 1.6rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--clr-text-muted, #aaa);
+  font-size: var(--fs-sm, 0.875rem);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.02em;
+}
+
+.tab-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--clr-text, #fff);
+  transform: translateY(-2px);
+}
+
+.tab-btn--active {
+  background: linear-gradient(135deg, var(--clr-accent, #7c3aed), var(--clr-accent-light, #a78bfa));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.35);
+}
+
+.tab-btn--active:hover {
+  background: linear-gradient(135deg, var(--clr-accent, #7c3aed), var(--clr-accent-light, #a78bfa));
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(124, 58, 237, 0.45);
+}
+
 .about__skills {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
